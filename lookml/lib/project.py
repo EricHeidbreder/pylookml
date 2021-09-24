@@ -767,6 +767,10 @@ class ProjectSSH(Project):
             else:
                 return self.call(' commit -m "' + self.deployMessage + '"', gitDir=False)
 
+        def checkout(self, branch):
+            if branch not in ['master', 'main']:
+                return self.call(' checkout ' + branch, gitDir=False)
+
         def pushRemote(self):
             return self.call(' push origin ' + self.branch + ' ', gitDir=False)
 
@@ -798,6 +802,7 @@ class ProjectSSH(Project):
                 deployMessage=self._commit_message
             )
             self._git.clone(self._git_url)
+            self._git.checkout(self._branch)
         self._build_index()
         
     # shell

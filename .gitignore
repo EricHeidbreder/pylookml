@@ -11,6 +11,7 @@ settings.ini
 api.ini
 autotune.ini
 lookml/tests/.conf/*
+pylookml\pylookml\lookml\workspace.code-workspace
 *.ini
 .DS_Store
 ~$lang_map_generator.xlsm
