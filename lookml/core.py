@@ -777,7 +777,8 @@ class Model(lookml):
     def __str__(self):
         return (
             f'{ self._s(sub_type="connection")}'
-            f'{ self._s(exclude_subtype="connection") }'
+            f'{ws.nl}'
+            f'{ self._s(sub_type="include")}'
             f'{ str(self.views) }'
             f'{ str(self.explores) }'
         )
